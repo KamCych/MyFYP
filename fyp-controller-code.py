@@ -7,6 +7,8 @@ pico_led.on()
 dial = Pot(26)
 butt = Button(15)
 
+
+#this function is used to determine the action choice based on the knob value
 def knob_pick():
     if dial.value < 0.3:
         print("PHONE HELP")
