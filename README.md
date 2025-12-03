@@ -13,3 +13,17 @@ The artefact for this university project is a new game experience, played with a
 - Wrote code and clearly commented descriptions for later.
 
 ![An image of a Raspberry Pi Pico circuit](/images/first-circuit.jpg)
+
+
+**03/12/25**
+
+- Added LEDs to circuit, turns an LED on based on the pot value.
+- Researching how to communicate between pico and Unity. 
+
+![An image of a Raspberry Pi Pico circuit, this time with LEDs](/images/circuit-leds.jpg)
+
+
+Two options:
+- Serial communication : Data is transferred through usb. Unity C# uses SerialPort class(?) to read serial data from pico. May need a UART/TTL converter.
+
+- Server/Wireless communication : HTTP or WebSocket; websockets are faster so itll probably be the choice. Pico will send data as (probably) JSON and Unity (and anything else) can read this as if it was a server(?)
