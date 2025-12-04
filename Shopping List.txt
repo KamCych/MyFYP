@@ -1,5 +1,16 @@
 Shopping List:
 
-Audio cables (2-3):
+- Audio cables (2-3):
 https://thepihut.com/products/3-5mm-jack-to-jack-stereo-audio-cable
 
+- Audio jacks (5-8)
+https://cricklewoodelectronics.com/Transparent-3.5mm-Stereo-Switched-Panel-Chassis-Socket-with-Mounting-Nut.html#tab_description 
+
+- Potentiometer (1)
+https://thepihut.com/products/panel-mount-1k-potentiometer-breadboard-friendly?variant=27739618577
+
+- Pot knob (1)
+https://thepihut.com/products/solid-machined-metal-knob-1-diameter?variant=27739728977
+
+
+- Wire
