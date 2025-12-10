@@ -7,17 +7,24 @@
 
 [node name="CallManager" parent="." instance=ExtResource("1_0xm2m")]
 
-[node name="Home" parent="." instance=ExtResource("2_h2yge")]
+[node name="CallTimer" type="Timer" parent="CallManager"]
+autostart = true
+
+[node name="Homes" type="Node" parent="."]
+
+[node name="Home" parent="Homes" instance=ExtResource("2_h2yge")]
 position = Vector2(187, 171)
 
-[node name="Home2" parent="." instance=ExtResource("2_h2yge")]
+[node name="Home2" parent="Homes" instance=ExtResource("2_h2yge")]
 position = Vector2(1000, 525)
 
-[node name="Home3" parent="." instance=ExtResource("2_h2yge")]
+[node name="Home3" parent="Homes" instance=ExtResource("2_h2yge")]
 position = Vector2(796, 94)
 
-[node name="Home4" parent="." instance=ExtResource("2_h2yge")]
+[node name="Home4" parent="Homes" instance=ExtResource("2_h2yge")]
 position = Vector2(603, 326)
 
-[node name="Home5" parent="." instance=ExtResource("2_h2yge")]
+[node name="Home5" parent="Homes" instance=ExtResource("2_h2yge")]
 position = Vector2(267, 506)
+
+[connection signal="timeout" from="CallManager/CallTimer" to="CallManager" method="_on_call_timer_timeout"]
