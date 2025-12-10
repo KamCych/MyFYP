@@ -1,0 +1,23 @@
+[gd_scene load_steps=3 format=3 uid="uid://bkl8ujy5ssp7g"]
+
+[ext_resource type="PackedScene" uid="uid://dyh0sto57vr2p" path="res://call_manager.tscn" id="1_0xm2m"]
+[ext_resource type="PackedScene" uid="uid://8kjrvfqefuup" path="res://home.tscn" id="2_h2yge"]
+
+[node name="Main" type="Node2D"]
+
+[node name="CallManager" parent="." instance=ExtResource("1_0xm2m")]
+
+[node name="Home" parent="." instance=ExtResource("2_h2yge")]
+position = Vector2(187, 171)
+
+[node name="Home2" parent="." instance=ExtResource("2_h2yge")]
+position = Vector2(1000, 525)
+
+[node name="Home3" parent="." instance=ExtResource("2_h2yge")]
+position = Vector2(796, 94)
+
+[node name="Home4" parent="." instance=ExtResource("2_h2yge")]
+position = Vector2(603, 326)
+
+[node name="Home5" parent="." instance=ExtResource("2_h2yge")]
+position = Vector2(267, 506)
