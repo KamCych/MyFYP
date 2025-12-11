@@ -8,7 +8,12 @@ var needHelp = false
 func _process(delta: float) -> void:
 	
 	if isCalling:
-		Calling()
+		#Calling()
+		$AnimationPlayer.play("calling")
+		$Button.visible = true
+	else:
+		$AnimationPlayer.stop()
+		$Button.visible = false
 
 
 func Calling() -> void:

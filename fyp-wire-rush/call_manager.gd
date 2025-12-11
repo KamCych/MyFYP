@@ -16,7 +16,7 @@ func _ready() -> void:
 func _process(delta: float) -> void:
 
 	
-		
+	inactiveHomes.append(homes.pop_front())
 			
 	
 		
@@ -24,16 +24,24 @@ func _process(delta: float) -> void:
 		
 
 func _on_answered() -> void:
-	for i in len(homes):
-		if !homes[i].isCalling:
-			inactiveHomes.insert(i, homes[i])
-	pass
+	print("answered!!!")
+	$CallTimer.stop()
+	$CallTimer.wait_time = 5
+	$CallTimer.start()
 
 func _on_call_timer_timeout() -> void:
 	
-	$CallTimer.wait_time = randi() % 3 + 1
+	$CallTimer.wait_time = randi() % 5 + 1
 	
-	var randomPick = randi() % len(inactiveHomes)
+	var notCallingList : Array
 	
-	inactiveHomes[randomPick].isCalling = true
-	inactiveHomes.pop_at(randomPick)
+	for i in homes:
+		if !i.isCalling:
+			notCallingList.append(i)
+	
+	if (len(notCallingList) > 0):
+		#var randomPick = randi() % len(notCallingList)
+		notCallingList[randi() % len(notCallingList)].isCalling = true
+	
+	
+	#inactiveHomes.pop_at(randomPick)
