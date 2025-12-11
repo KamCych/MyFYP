@@ -27,3 +27,15 @@ Two options:
 - Serial communication : Data is transferred through usb. Unity C# uses SerialPort class(?) to read serial data from pico. May need a UART/TTL converter.
 
 - Server/Wireless communication : HTTP or WebSocket; websockets are faster so itll probably be the choice. Pico will send data as (probably) JSON and Unity (and anything else) can read this as if it was a server(?)
+
+**11/12/25**
+
+- Ordered additional electronic components
+- Begun game prototype in Godot
+
+![Yellow LEDs](/images/components/yellow-led.jpg)
+![Green LEDs](/images/components/green-led.jpg)
+![Button](/images/components/button.jpg)
+![Resistors](/images/components/res.jpg)
+
+The game so far has code that sets up communication between the controller and the game engine.
