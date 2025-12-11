@@ -4,6 +4,7 @@ signal answered
 
 var isCalling = false
 var needHelp = false
+var connected = false
 
 func _process(delta: float) -> void:
 	

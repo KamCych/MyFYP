@@ -1,7 +1,9 @@
-[gd_scene load_steps=3 format=3 uid="uid://bkl8ujy5ssp7g"]
+[gd_scene load_steps=5 format=3 uid="uid://bkl8ujy5ssp7g"]
 
 [ext_resource type="PackedScene" uid="uid://dyh0sto57vr2p" path="res://call_manager.tscn" id="1_0xm2m"]
 [ext_resource type="PackedScene" uid="uid://8kjrvfqefuup" path="res://home.tscn" id="2_h2yge"]
+[ext_resource type="Script" uid="uid://bfluna446oajx" path="res://input_manager.gd" id="3_h2yge"]
+[ext_resource type="PackedScene" uid="uid://e3g7xt1qmm7u" path="res://hq.tscn" id="4_1bvp3"]
 
 [node name="Main" type="Node2D"]
 
@@ -12,19 +14,34 @@ autostart = true
 
 [node name="Homes" type="Node" parent="."]
 
-[node name="Home" parent="Homes" instance=ExtResource("2_h2yge")]
-position = Vector2(187, 171)
+[node name="A1" parent="Homes" instance=ExtResource("2_h2yge")]
+position = Vector2(106, 96)
 
-[node name="Home2" parent="Homes" instance=ExtResource("2_h2yge")]
-position = Vector2(1000, 525)
+[node name="A2" parent="Homes" instance=ExtResource("2_h2yge")]
+position = Vector2(365, 115)
 
-[node name="Home3" parent="Homes" instance=ExtResource("2_h2yge")]
-position = Vector2(796, 94)
+[node name="A3" parent="Homes" instance=ExtResource("2_h2yge")]
+position = Vector2(643, 144)
 
-[node name="Home4" parent="Homes" instance=ExtResource("2_h2yge")]
-position = Vector2(603, 326)
+[node name="A4" parent="Homes" instance=ExtResource("2_h2yge")]
+position = Vector2(936, 117)
 
-[node name="Home5" parent="Homes" instance=ExtResource("2_h2yge")]
-position = Vector2(267, 506)
+[node name="B1" parent="Homes" instance=ExtResource("2_h2yge")]
+position = Vector2(102, 429)
+
+[node name="B2" parent="Homes" instance=ExtResource("2_h2yge")]
+position = Vector2(295, 561)
+
+[node name="B3" parent="Homes" instance=ExtResource("2_h2yge")]
+position = Vector2(554, 363)
+
+[node name="B4" parent="Homes" instance=ExtResource("2_h2yge")]
+position = Vector2(992, 372)
+
+[node name="InputManager" type="Node" parent="."]
+script = ExtResource("3_h2yge")
+
+[node name="HQ" parent="." instance=ExtResource("4_1bvp3")]
+position = Vector2(850, 563)
 
 [connection signal="timeout" from="CallManager/CallTimer" to="CallManager" method="_on_call_timer_timeout"]
