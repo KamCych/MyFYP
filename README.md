@@ -39,3 +39,9 @@ Two options:
 ![Resistors](/images/components/res.jpg)
 
 The game so far has code that sets up communication between the controller and the game engine.
+
+**15/12/25**
+
+- Audio jack components arrived.
+
+![Audio jacks](/images/aux-jacks.jpg) 
