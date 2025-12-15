@@ -43,5 +43,7 @@ The game so far has code that sets up communication between the controller and t
 **15/12/25**
 
 - Audio jack components arrived.
+- Measured dimensions of each component with a ruler.
+- Started modelling in Tinkercad, making use of the dimensions collected before.
 
 ![Audio jacks](/images/aux-jacks.jpg) 
