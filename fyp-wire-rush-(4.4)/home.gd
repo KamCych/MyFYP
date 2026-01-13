@@ -1,6 +1,6 @@
 extends Node2D
 
-signal answered(homePosition)
+signal answered
 
 var isCalling = false
 var needHelp = false
@@ -24,5 +24,5 @@ func Calling() -> void:
 
 
 func _on_button_pressed() -> void:
-	answered.emit(position)
+	emit_signal("answered")
 	isCalling = false

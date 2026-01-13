@@ -20,10 +20,10 @@ func _process(delta: float) -> void:
 			
 	
 		
-	#print(len(inactiveHomes))
+	print(len(inactiveHomes))
 		
 
-func _on_answered(homePosition) -> void:
+func _on_answered() -> void:
 	print("answered!!!")
 	$CallTimer.stop()
 	$CallTimer.wait_time = 5
