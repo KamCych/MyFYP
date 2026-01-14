@@ -10,12 +10,14 @@ var newHQ
 func _physics_process(delta: float) -> void:
 	
 	if sentOut:
-		get_node("HQ").engineerCall.connect(_on_engineer_call)
+		#get_node("HQ").engineerCall.connect(_on_engineer_call)
 		
-		velocity = position.direction_to(homeTarget) * 5
+		velocity = global_position.direction_to(homeTarget) * 40
+		#print(velocity)
 		
 		move_and_slide()
 
 func _on_engineer_call(target):
+	print("Calling engineer")
 	homeTarget = target
 	sentOut = true

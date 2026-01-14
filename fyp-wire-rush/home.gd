@@ -24,5 +24,5 @@ func Calling() -> void:
 
 
 func _on_button_pressed() -> void:
-	answered.emit(position)
+	answered.emit(global_position)
 	isCalling = false

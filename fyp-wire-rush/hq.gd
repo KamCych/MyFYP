@@ -18,8 +18,9 @@ func _process(delta: float) -> void:
 	if sentEngineer:
 		var newEngineer = engineer.instantiate()
 		add_child(newEngineer)
-		
-		engineerCall.emit(targetHomePosition)
+		#newEngineer.engineerCall.connect(_on_engineer_call)
+		newEngineer._on_engineer_call(targetHomePosition)
+		#engineerCall.emit(targetHomePosition)
 		sentEngineer = false
 		
 
