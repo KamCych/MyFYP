@@ -31,3 +31,11 @@ offset_top = 533.0
 offset_right = 1093.0
 offset_bottom = 597.0
 text = "Disconnect"
+
+[node name="Button" type="Button" parent="."]
+layout_mode = 0
+offset_left = 900.0
+offset_top = 419.0
+offset_right = 973.0
+offset_bottom = 491.0
+text = "BUTTON"
