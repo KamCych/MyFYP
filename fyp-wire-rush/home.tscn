@@ -59,4 +59,23 @@ offset_right = 80.0
 offset_bottom = 78.0
 text = "press to answer"
 
+[node name="PatienceTimer" type="Timer" parent="."]
+wait_time = 10.0
+
+[node name="PatienceMeter" type="ProgressBar" parent="."]
+offset_left = -87.0
+offset_top = -112.0
+offset_right = 87.0
+offset_bottom = -85.0
+value = 100.0
+fill_mode = 1
+show_percentage = false
+
+[node name="ProblemText" type="Label" parent="."]
+offset_left = -62.0
+offset_top = -158.0
+offset_right = 64.0
+offset_bottom = -126.0
+
 [connection signal="pressed" from="Button" to="." method="_on_button_pressed"]
+[connection signal="timeout" from="PatienceTimer" to="." method="_on_patience_timer_timeout"]
