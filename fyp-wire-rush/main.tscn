@@ -1,9 +1,11 @@
-[gd_scene load_steps=5 format=3 uid="uid://bkl8ujy5ssp7g"]
+[gd_scene load_steps=7 format=3 uid="uid://bkl8ujy5ssp7g"]
 
 [ext_resource type="PackedScene" uid="uid://dyh0sto57vr2p" path="res://call_manager.tscn" id="1_0xm2m"]
 [ext_resource type="PackedScene" uid="uid://8kjrvfqefuup" path="res://home.tscn" id="2_h2yge"]
 [ext_resource type="Script" uid="uid://bfluna446oajx" path="res://input_manager.gd" id="3_h2yge"]
 [ext_resource type="PackedScene" uid="uid://e3g7xt1qmm7u" path="res://hq.tscn" id="4_1bvp3"]
+[ext_resource type="PackedScene" uid="uid://dn2t0c41j1x4r" path="res://ui.tscn" id="5_lquwl"]
+[ext_resource type="Script" uid="uid://vefepxpxs4uj" path="res://problem_tracker.gd" id="6_7mycd"]
 
 [node name="Main" type="Node2D"]
 
@@ -16,32 +18,39 @@ autostart = true
 
 [node name="A1" parent="Homes" instance=ExtResource("2_h2yge")]
 position = Vector2(106, 96)
+scale = Vector2(0.75, 0.75)
 
 [node name="A2" parent="Homes" instance=ExtResource("2_h2yge")]
-position = Vector2(365, 115)
+position = Vector2(560, 129)
+scale = Vector2(0.75, 0.75)
 
 [node name="A3" parent="Homes" instance=ExtResource("2_h2yge")]
-position = Vector2(643, 144)
-
-[node name="A4" parent="Homes" instance=ExtResource("2_h2yge")]
-position = Vector2(936, 117)
+position = Vector2(1042, 155)
+scale = Vector2(0.75, 0.75)
 
 [node name="B1" parent="Homes" instance=ExtResource("2_h2yge")]
 position = Vector2(102, 429)
+scale = Vector2(0.75, 0.75)
 
 [node name="B2" parent="Homes" instance=ExtResource("2_h2yge")]
-position = Vector2(295, 561)
+position = Vector2(367, 528)
+scale = Vector2(0.75, 0.75)
 
 [node name="B3" parent="Homes" instance=ExtResource("2_h2yge")]
-position = Vector2(554, 363)
-
-[node name="B4" parent="Homes" instance=ExtResource("2_h2yge")]
-position = Vector2(992, 372)
+position = Vector2(899, 331)
+scale = Vector2(0.75, 0.75)
 
 [node name="InputManager" type="Node" parent="."]
 script = ExtResource("3_h2yge")
 
 [node name="HQ" parent="." instance=ExtResource("4_1bvp3")]
-position = Vector2(850, 563)
+position = Vector2(596, 360)
+
+[node name="UI" parent="." instance=ExtResource("5_lquwl")]
+offset_top = 1.0
+offset_bottom = 1.0
+
+[node name="ProblemTracker" type="Node" parent="."]
+script = ExtResource("6_7mycd")
 
 [connection signal="timeout" from="CallManager/CallTimer" to="CallManager" method="_on_call_timer_timeout"]

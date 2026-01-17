@@ -29,6 +29,7 @@ func _on_answered(homePosition) -> void:
 	$CallTimer.wait_time = 5
 	$CallTimer.start()
 
+#call timer is in charge of when a customer calls the phone
 func _on_call_timer_timeout() -> void:
 	
 	$CallTimer.wait_time = randi() % 5 + 1
@@ -39,9 +40,10 @@ func _on_call_timer_timeout() -> void:
 		if !i.isCalling:
 			notCallingList.append(i)
 	
+	#picks a random house to start calling
 	if (len(notCallingList) > 0):
 		#var randomPick = randi() % len(notCallingList)
-		notCallingList[randi() % len(notCallingList)].isCalling = true
+		notCallingList[randi() % len(notCallingList)].onCall()
 	
 	
 	#inactiveHomes.pop_at(randomPick)
