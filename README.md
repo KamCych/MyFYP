@@ -47,3 +47,18 @@ The game so far has code that sets up communication between the controller and t
 - Started modelling in Tinkercad, making use of the dimensions collected before.
 
 ![Audio jacks](/images/aux-jacks.jpg) 
+
+
+**12/01/26 - 18/01/26**
+
+- Began practising soldering, and learning wiring of components, specifically the audio jack.
+
+![Wired audio jack](/images/jack-circuit-labelled.jpg)
+
+Built a circuit using the audio jack. Code (jack-detection.py) detects if a cable's been inserted into the jack.
+
+![Audio jack LED toggle (off)](/images/jack-led-off.jpg)
+![Audio jack LED toggle (on)](/images/jack-led-on.jpg)
+
+- Completed circuit schematics in EasyEDA
+- Continued working on game in Godot.
