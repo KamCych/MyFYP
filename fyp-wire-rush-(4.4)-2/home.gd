@@ -1,7 +1,6 @@
 extends Node2D
 
 signal answered(homePosition)
-signal selected(selectedProblem)
 
 var isCalling = false
 var needHelp = false
@@ -37,7 +36,6 @@ func _on_button_pressed() -> void:
 	$PatienceTimer.stop()
 	problem = problems[randi_range(0,1)]
 	$ProblemText.text = problem
-	selected.emit(problem) #why does this make answered signal problem?
 
 
 func _on_patience_timer_timeout() -> void:
