@@ -30,9 +30,10 @@ func Calling() -> void:
 func onCall():
 	isCalling = true
 	$PatienceTimer.start()
+	answered.emit(global_position, name)
 
 func _on_button_pressed() -> void:
-	answered.emit(global_position, name)
+	#answered.emit(global_position, name)
 	isCalling = false
 	$PatienceTimer.stop()
 	problem = problems[randi_range(0,1)]
