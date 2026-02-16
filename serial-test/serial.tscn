@@ -1,0 +1,18 @@
+[gd_scene format=3 uid="uid://diq20f1niyii5"]
+
+[ext_resource type="Script" uid="uid://jugru21g5ewy" path="res://Serial.cs" id="1_hsrie"]
+
+[node name="Serial" type="Control" unique_id=1011456130]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_hsrie")
+
+[node name="Label" type="Label" parent="." unique_id=691455396]
+layout_mode = 0
+offset_right = 1151.0
+offset_bottom = 593.0
+theme_override_font_sizes/font_size = 50

@@ -1,0 +1,6 @@
+[gd_scene load_steps=2 format=3 uid="uid://dyh0sto57vr2p"]
+
+[ext_resource type="Script" uid="uid://nvmjjnh7wiqs" path="res://call_manager.gd" id="1_rdoyg"]
+
+[node name="CallManager" type="Node2D"]
+script = ExtResource("1_rdoyg")

@@ -1,0 +1,58 @@
+[gd_scene format=3 uid="uid://bkl8ujy5ssp7g"]
+
+[ext_resource type="PackedScene" uid="uid://dyh0sto57vr2p" path="res://call_manager.tscn" id="1_0xm2m"]
+[ext_resource type="PackedScene" uid="uid://8kjrvfqefuup" path="res://home.tscn" id="2_h2yge"]
+[ext_resource type="Script" uid="uid://bfluna446oajx" path="res://input_manager.gd" id="3_h2yge"]
+[ext_resource type="PackedScene" uid="uid://e3g7xt1qmm7u" path="res://hq.tscn" id="4_1bvp3"]
+[ext_resource type="PackedScene" uid="uid://dn2t0c41j1x4r" path="res://option_controls.tscn" id="5_lquwl"]
+[ext_resource type="Script" uid="uid://vefepxpxs4uj" path="res://problem_tracker.gd" id="6_7mycd"]
+[ext_resource type="PackedScene" uid="uid://diq20f1niyii5" path="res://serial.tscn" id="7_272bh"]
+
+[node name="Main" type="Node2D" unique_id=717333279]
+
+[node name="CallManager" parent="." unique_id=151039011 instance=ExtResource("1_0xm2m")]
+
+[node name="CallTimer" type="Timer" parent="CallManager" unique_id=1224730773]
+autostart = true
+
+[node name="Homes" type="Node" parent="." unique_id=1875589083]
+
+[node name="A1" parent="Homes" unique_id=368042237 instance=ExtResource("2_h2yge")]
+position = Vector2(106, 96)
+scale = Vector2(0.75, 0.75)
+
+[node name="A2" parent="Homes" unique_id=993600982 instance=ExtResource("2_h2yge")]
+position = Vector2(560, 129)
+scale = Vector2(0.75, 0.75)
+
+[node name="A3" parent="Homes" unique_id=1512133826 instance=ExtResource("2_h2yge")]
+position = Vector2(1042, 155)
+scale = Vector2(0.75, 0.75)
+
+[node name="B1" parent="Homes" unique_id=971368069 instance=ExtResource("2_h2yge")]
+position = Vector2(102, 429)
+scale = Vector2(0.75, 0.75)
+
+[node name="B2" parent="Homes" unique_id=1759543866 instance=ExtResource("2_h2yge")]
+position = Vector2(367, 528)
+scale = Vector2(0.75, 0.75)
+
+[node name="B3" parent="Homes" unique_id=897371307 instance=ExtResource("2_h2yge")]
+position = Vector2(899, 331)
+scale = Vector2(0.75, 0.75)
+
+[node name="InputManager" type="Node" parent="." unique_id=1562442601]
+script = ExtResource("3_h2yge")
+
+[node name="HQ" parent="." unique_id=1033827495 instance=ExtResource("4_1bvp3")]
+position = Vector2(596, 360)
+
+[node name="ProblemTracker" type="Node" parent="." unique_id=1012796640]
+script = ExtResource("6_7mycd")
+
+[node name="OptionControls" parent="." unique_id=208505851 instance=ExtResource("5_lquwl")]
+
+[node name="Serial" parent="." unique_id=1011456130 instance=ExtResource("7_272bh")]
+
+[connection signal="timeout" from="CallManager/CallTimer" to="CallManager" method="_on_call_timer_timeout"]
+[connection signal="picked_choice" from="OptionControls" to="ProblemTracker" method="_on_option_controls_picked_choice"]
