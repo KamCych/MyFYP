@@ -17,27 +17,27 @@ autostart = true
 
 [node name="Homes" type="Node" parent="." unique_id=1875589083]
 
-[node name="0" parent="Homes" unique_id=368042237 instance=ExtResource("2_h2yge")]
+[node name="jack1" parent="Homes" unique_id=368042237 instance=ExtResource("2_h2yge")]
 position = Vector2(106, 96)
 scale = Vector2(0.75, 0.75)
 
-[node name="1" parent="Homes" unique_id=993600982 instance=ExtResource("2_h2yge")]
+[node name="jack2" parent="Homes" unique_id=993600982 instance=ExtResource("2_h2yge")]
 position = Vector2(560, 129)
 scale = Vector2(0.75, 0.75)
 
-[node name="2" parent="Homes" unique_id=1512133826 instance=ExtResource("2_h2yge")]
+[node name="jack3" parent="Homes" unique_id=1512133826 instance=ExtResource("2_h2yge")]
 position = Vector2(1042, 155)
 scale = Vector2(0.75, 0.75)
 
-[node name="3" parent="Homes" unique_id=971368069 instance=ExtResource("2_h2yge")]
+[node name="jack4" parent="Homes" unique_id=971368069 instance=ExtResource("2_h2yge")]
 position = Vector2(102, 429)
 scale = Vector2(0.75, 0.75)
 
-[node name="4" parent="Homes" unique_id=1759543866 instance=ExtResource("2_h2yge")]
+[node name="jack5" parent="Homes" unique_id=1759543866 instance=ExtResource("2_h2yge")]
 position = Vector2(367, 528)
 scale = Vector2(0.75, 0.75)
 
-[node name="5" parent="Homes" unique_id=897371307 instance=ExtResource("2_h2yge")]
+[node name="jack6" parent="Homes" unique_id=897371307 instance=ExtResource("2_h2yge")]
 position = Vector2(899, 331)
 scale = Vector2(0.75, 0.75)
 

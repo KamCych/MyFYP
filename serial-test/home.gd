@@ -1,6 +1,6 @@
 extends Node2D
 
-signal answered(homePosition, homeName)
+signal answered(homePosition, homeName, homeProblem)
 signal selected(selectedProblem)
 
 var isCalling = false
@@ -30,14 +30,15 @@ func Calling() -> void:
 func onCall():
 	isCalling = true
 	$PatienceTimer.start()
-	answered.emit(global_position, name)
+	problem = problems[randi_range(0,1)]
+	$ProblemText.text = problem
+	answered.emit(global_position, name, problem)
 
 func _on_button_pressed() -> void:
 	#answered.emit(global_position, name)
 	isCalling = false
 	$PatienceTimer.stop()
-	problem = problems[randi_range(0,1)]
-	$ProblemText.text = problem
+	
 	selected.emit(problem) #why does this make answered signal problem?
 
 
