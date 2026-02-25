@@ -14,6 +14,14 @@ func _ready() -> void:
 	for i in len(homes):
 		homes[i].answered.connect(_on_answered)
 
+	var joypads = Input.get_connected_joypads()
+	print("Connected joypads: ", joypads)
+
+func _input(event):
+	if event is InputEventJoypadButton:
+		if event.pressed:
+			print("Button pressed: ", event.button_index)
+
 func _process(delta: float) -> void:
 	if sentEngineer:
 		var newEngineer = engineer.instantiate()
@@ -22,7 +30,10 @@ func _process(delta: float) -> void:
 		newEngineer._on_engineer_call(targetHomePosition)
 		#engineerCall.emit(targetHomePosition)
 		sentEngineer = false
-		
+	
+	
+	if Input.is_action_pressed("a1"):
+		print("PRESSED BUTTON ON CONTROLLER")
 
 func _on_answered(homePosition) -> void:
 	print("WOW ANSWERED BY HQ")

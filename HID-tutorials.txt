@@ -1,0 +1,3 @@
+https://www.youtube.com/watch?v=__QZQEOG6tA&t=615s - hid pico setup tut
+
+https://github.com/adafruit/Adafruit_CircuitPython_HID/blob/main/examples/hid_simple_gamepad.py - circuitPython example code
