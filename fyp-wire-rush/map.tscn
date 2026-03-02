@@ -1,0 +1,60 @@
+[gd_scene format=3 uid="uid://jps3bwfeqy6s"]
+
+[node name="Map" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="ColorRect" type="ColorRect" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(1, 0.88235295, 0.5921569, 1)
+
+[node name="ColorRect2" type="ColorRect" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 236.00002
+offset_top = 195.0
+offset_right = -900.3232
+offset_bottom = -151.01349
+grow_horizontal = 2
+grow_vertical = 2
+rotation = -1.00533
+color = Color(0, 0, 0, 1)
+
+[node name="ColorRect3" type="ColorRect" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 648.0
+offset_top = 425.0
+offset_right = -488.32318
+offset_bottom = 78.98651
+grow_horizontal = 2
+grow_vertical = 2
+rotation = -1.2517163
+color = Color(0, 0, 0, 1)
+
+[node name="ColorRect4" type="ColorRect" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 584.0
+offset_top = 368.99997
+offset_right = -552.3232
+offset_bottom = 22.986511
+grow_horizontal = 2
+grow_vertical = 2
+rotation = -2.3262787
+color = Color(0, 0, 0, 1)

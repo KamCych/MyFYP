@@ -43,3 +43,11 @@ func _on_button_pressed() -> void:
 func _on_patience_timer_timeout() -> void:
 	isCalling = false
 	#penalty for ignoring customer
+	
+func connectTo():
+	problem = problems[randi_range(0,1)]
+	$ProblemText.text = problem
+
+func sendHelp(knobValue):
+	if knobValue < 0.3:
+		pass

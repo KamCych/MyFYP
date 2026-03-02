@@ -1,0 +1,9 @@
+[gd_scene load_steps=2 format=3 uid="uid://doy6tjitlnqu6"]
+
+[ext_resource type="Script" uid="uid://drivhyemgf4qs" path="res://communication.gd" id="1_eicu8"]
+
+[node name="Communication" type="Node"]
+script = ExtResource("1_eicu8")
+
+[node name="Timer" type="Timer" parent="."]
+wait_time = 0.5

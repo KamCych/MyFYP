@@ -1,4 +1,4 @@
-[gd_scene load_steps=7 format=3 uid="uid://bkl8ujy5ssp7g"]
+[gd_scene load_steps=8 format=3 uid="uid://bkl8ujy5ssp7g"]
 
 [ext_resource type="PackedScene" uid="uid://dyh0sto57vr2p" path="res://call_manager.tscn" id="1_0xm2m"]
 [ext_resource type="PackedScene" uid="uid://8kjrvfqefuup" path="res://home.tscn" id="2_h2yge"]
@@ -6,6 +6,7 @@
 [ext_resource type="PackedScene" uid="uid://e3g7xt1qmm7u" path="res://hq.tscn" id="4_1bvp3"]
 [ext_resource type="PackedScene" uid="uid://dn2t0c41j1x4r" path="res://option_controls.tscn" id="5_lquwl"]
 [ext_resource type="Script" uid="uid://vefepxpxs4uj" path="res://problem_tracker.gd" id="6_7mycd"]
+[ext_resource type="PackedScene" uid="uid://jps3bwfeqy6s" path="res://map.tscn" id="7_272bh"]
 
 [node name="Main" type="Node2D"]
 
@@ -50,6 +51,8 @@ position = Vector2(596, 360)
 script = ExtResource("6_7mycd")
 
 [node name="OptionControls" parent="." instance=ExtResource("5_lquwl")]
+
+[node name="Map" parent="." instance=ExtResource("7_272bh")]
 
 [connection signal="timeout" from="CallManager/CallTimer" to="CallManager" method="_on_call_timer_timeout"]
 [connection signal="picked_choice" from="OptionControls" to="ProblemTracker" method="_on_option_controls_picked_choice"]

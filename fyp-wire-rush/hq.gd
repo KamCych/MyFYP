@@ -6,7 +6,7 @@ var sentEngineer = false
 var targetHomePosition
 var homes : Array[Node]
 var engineer = load("res://engineer.tscn")
-
+var waitingForInput = false
 
 func _ready() -> void:
 	homes = get_tree().get_nodes_in_group("homes")
@@ -14,13 +14,7 @@ func _ready() -> void:
 	for i in len(homes):
 		homes[i].answered.connect(_on_answered)
 
-	var joypads = Input.get_connected_joypads()
-	print("Connected joypads: ", joypads)
 
-func _input(event):
-	if event is InputEventJoypadButton:
-		if event.pressed:
-			print("Button pressed: ", event.button_index)
 
 func _process(delta: float) -> void:
 	if sentEngineer:
@@ -31,10 +25,18 @@ func _process(delta: float) -> void:
 		#engineerCall.emit(targetHomePosition)
 		sentEngineer = false
 	
+	if waitingForInput:
+		if Input.is_action_pressed("confirm"):
+			pass
+			#send help
 	
 	if Input.is_action_pressed("a1"):
 		print("PRESSED BUTTON ON CONTROLLER")
-
+		if homes[0].isCalling:
+			homes[0].connected = true
+			waitingForInput = true
+			#notify home that theyre connected.
+			#wait for input
 func _on_answered(homePosition) -> void:
 	print("WOW ANSWERED BY HQ")
 	targetHomePosition = homePosition
