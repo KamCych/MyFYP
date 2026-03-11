@@ -1,7 +1,7 @@
-[gd_scene load_steps=6 format=3 uid="uid://8kjrvfqefuup"]
+[gd_scene load_steps=7 format=3 uid="uid://8kjrvfqefuup"]
 
 [ext_resource type="Script" uid="uid://ct161d8xv35e" path="res://home.gd" id="1_1ey7h"]
-[ext_resource type="Texture2D" uid="uid://bm422wi6tdnwo" path="res://icon.svg" id="1_tt30a"]
+[ext_resource type="Texture2D" uid="uid://cth4prhjkddd7" path="res://assets/house.png" id="2_1ey7h"]
 
 [sub_resource type="Animation" id="Animation_o1ld7"]
 length = 0.001
@@ -16,6 +16,30 @@ tracks/0/keys = {
 "transitions": PackedFloat32Array(1),
 "update": 0,
 "values": [Vector2(1, 1)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Sprite2D:texture")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [ExtResource("2_1ey7h")]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("Sprite2D:rotation")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [0.0]
 }
 
 [sub_resource type="Animation" id="Animation_1ey7h"]
@@ -34,17 +58,48 @@ tracks/0/keys = {
 "values": [Vector2(1, 1), Vector2(1.5, 1.5), Vector2(1, 1)]
 }
 
+[sub_resource type="Animation" id="Animation_2ayvv"]
+resource_name = "ring"
+length = 0.2
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite2D:texture")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [ExtResource("2_1ey7h")]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Sprite2D:rotation")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.05, 0.1, 0.15),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
+"update": 0,
+"values": [0.0, 0.17453292, 0.0, -0.08726646]
+}
+
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_2ayvv"]
 _data = {
 &"RESET": SubResource("Animation_o1ld7"),
-&"calling": SubResource("Animation_1ey7h")
+&"calling": SubResource("Animation_1ey7h"),
+&"ring": SubResource("Animation_2ayvv")
 }
 
 [node name="Home" type="Node2D" groups=["homes"]]
+scale = Vector2(0.8, 0.8)
 script = ExtResource("1_1ey7h")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
-texture = ExtResource("1_tt30a")
+texture = ExtResource("2_1ey7h")
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
 libraries = {
@@ -52,11 +107,11 @@ libraries = {
 }
 
 [node name="Button" type="Button" parent="."]
-visible = false
-offset_left = -85.0
-offset_top = -79.0
-offset_right = 80.0
-offset_bottom = 78.0
+offset_left = -212.5
+offset_top = -208.74998
+offset_right = -47.5
+offset_bottom = -51.749985
+scale = Vector2(1, 1.1000006)
 text = "press to answer"
 
 [node name="PatienceTimer" type="Timer" parent="."]

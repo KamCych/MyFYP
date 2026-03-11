@@ -11,11 +11,12 @@ var problems = ["phone", "net"]
 
 var problem : String # phone or net
 
+
 func _process(delta: float) -> void:
 	$PatienceMeter.value = $PatienceTimer.time_left * 10
 	if isCalling:
 		#Calling()
-		$AnimationPlayer.play("calling")
+		$AnimationPlayer.play("ring")
 		$Button.visible = true
 	else:
 		$AnimationPlayer.stop()
@@ -23,7 +24,7 @@ func _process(delta: float) -> void:
 
 
 func Calling() -> void:
-	$AnimationPlayer.play("calling")
+	$AnimationPlayer.play("ring")
 	$Button.visible = true
 	
 	
@@ -49,5 +50,9 @@ func connectTo():
 	$ProblemText.text = problem
 
 func sendHelp(knobValue):
-	if knobValue < 0.3:
+	if knobValue < -0.5 and problem == "phone":
+		#COMPLETED
+		pass
+	if knobValue > -0.5 and knobValue < 0.5 and problem == "net":
+		#COMPLETED
 		pass

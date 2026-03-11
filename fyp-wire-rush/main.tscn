@@ -18,27 +18,27 @@ autostart = true
 [node name="Homes" type="Node" parent="."]
 
 [node name="A1" parent="Homes" instance=ExtResource("2_h2yge")]
-position = Vector2(106, 96)
+position = Vector2(155.00002, 162)
 scale = Vector2(0.75, 0.75)
 
 [node name="A2" parent="Homes" instance=ExtResource("2_h2yge")]
-position = Vector2(560, 129)
+position = Vector2(509, 582)
 scale = Vector2(0.75, 0.75)
 
 [node name="A3" parent="Homes" instance=ExtResource("2_h2yge")]
-position = Vector2(1042, 155)
+position = Vector2(954, 98)
 scale = Vector2(0.75, 0.75)
 
-[node name="B1" parent="Homes" instance=ExtResource("2_h2yge")]
-position = Vector2(102, 429)
+[node name="A4" parent="Homes" instance=ExtResource("2_h2yge")]
+position = Vector2(111.00006, 557)
 scale = Vector2(0.75, 0.75)
 
-[node name="B2" parent="Homes" instance=ExtResource("2_h2yge")]
-position = Vector2(367, 528)
+[node name="A5" parent="Homes" instance=ExtResource("2_h2yge")]
+position = Vector2(1004, 411)
 scale = Vector2(0.75, 0.75)
 
-[node name="B3" parent="Homes" instance=ExtResource("2_h2yge")]
-position = Vector2(899, 331)
+[node name="A6" parent="Homes" instance=ExtResource("2_h2yge")]
+position = Vector2(744, 459)
 scale = Vector2(0.75, 0.75)
 
 [node name="InputManager" type="Node" parent="."]
