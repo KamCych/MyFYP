@@ -1,4 +1,4 @@
-[gd_scene load_steps=8 format=3 uid="uid://bkl8ujy5ssp7g"]
+[gd_scene load_steps=9 format=3 uid="uid://bkl8ujy5ssp7g"]
 
 [ext_resource type="PackedScene" uid="uid://dyh0sto57vr2p" path="res://call_manager.tscn" id="1_0xm2m"]
 [ext_resource type="PackedScene" uid="uid://8kjrvfqefuup" path="res://home.tscn" id="2_h2yge"]
@@ -7,38 +7,50 @@
 [ext_resource type="PackedScene" uid="uid://dn2t0c41j1x4r" path="res://option_controls.tscn" id="5_lquwl"]
 [ext_resource type="Script" uid="uid://vefepxpxs4uj" path="res://problem_tracker.gd" id="6_7mycd"]
 [ext_resource type="PackedScene" uid="uid://jps3bwfeqy6s" path="res://map.tscn" id="7_272bh"]
+[ext_resource type="PackedScene" uid="uid://dh76bf2xlm840" path="res://lives.tscn" id="8_5vw27"]
 
 [node name="Main" type="Node2D"]
+
+[node name="Map" parent="." instance=ExtResource("7_272bh")]
+
+[node name="Lives" parent="." instance=ExtResource("8_5vw27")]
+
+[node name="OptionControls" parent="." instance=ExtResource("5_lquwl")]
+offset_left = 1040.0
+offset_top = 124.0
+offset_right = 1040.0
+offset_bottom = 124.0
 
 [node name="CallManager" parent="." instance=ExtResource("1_0xm2m")]
 
 [node name="CallTimer" type="Timer" parent="CallManager"]
+wait_time = 6.0
 autostart = true
 
 [node name="Homes" type="Node" parent="."]
 
-[node name="A1" parent="Homes" instance=ExtResource("2_h2yge")]
-position = Vector2(155.00002, 162)
+[node name="a1" parent="Homes" instance=ExtResource("2_h2yge")]
+position = Vector2(413, 241)
 scale = Vector2(0.75, 0.75)
 
-[node name="A2" parent="Homes" instance=ExtResource("2_h2yge")]
-position = Vector2(509, 582)
+[node name="a2" parent="Homes" instance=ExtResource("2_h2yge")]
+position = Vector2(160, 176)
 scale = Vector2(0.75, 0.75)
 
-[node name="A3" parent="Homes" instance=ExtResource("2_h2yge")]
-position = Vector2(954, 98)
+[node name="a3" parent="Homes" instance=ExtResource("2_h2yge")]
+position = Vector2(476, 547)
 scale = Vector2(0.75, 0.75)
 
-[node name="A4" parent="Homes" instance=ExtResource("2_h2yge")]
-position = Vector2(111.00006, 557)
+[node name="a4" parent="Homes" instance=ExtResource("2_h2yge")]
+position = Vector2(853, 475)
 scale = Vector2(0.75, 0.75)
 
-[node name="A5" parent="Homes" instance=ExtResource("2_h2yge")]
-position = Vector2(1004, 411)
+[node name="a5" parent="Homes" instance=ExtResource("2_h2yge")]
+position = Vector2(250.00003, 467)
 scale = Vector2(0.75, 0.75)
 
-[node name="A6" parent="Homes" instance=ExtResource("2_h2yge")]
-position = Vector2(744, 459)
+[node name="a6" parent="Homes" instance=ExtResource("2_h2yge")]
+position = Vector2(901, 214)
 scale = Vector2(0.75, 0.75)
 
 [node name="InputManager" type="Node" parent="."]
@@ -50,9 +62,5 @@ position = Vector2(596, 360)
 [node name="ProblemTracker" type="Node" parent="."]
 script = ExtResource("6_7mycd")
 
-[node name="OptionControls" parent="." instance=ExtResource("5_lquwl")]
-
-[node name="Map" parent="." instance=ExtResource("7_272bh")]
-
-[connection signal="timeout" from="CallManager/CallTimer" to="CallManager" method="_on_call_timer_timeout"]
 [connection signal="picked_choice" from="OptionControls" to="ProblemTracker" method="_on_option_controls_picked_choice"]
+[connection signal="timeout" from="CallManager/CallTimer" to="CallManager" method="_on_call_timer_timeout"]

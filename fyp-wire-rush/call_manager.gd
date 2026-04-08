@@ -8,7 +8,7 @@ func _ready() -> void:
 	inactiveHomes = homes
 	print("number of homes: " + str(len(homes)))
 	
-	$CallTimer.wait_time = randi() % 3 + 1
+	$CallTimer.wait_time = 6
 	
 	for i in len(homes):
 		homes[i].answered.connect(_on_answered)
@@ -32,12 +32,18 @@ func _on_answered(homePosition) -> void:
 #call timer is in charge of when a customer calls the phone
 func _on_call_timer_timeout() -> void:
 	
-	$CallTimer.wait_time = randi() % 5 + 1
+	#$CallTimer.wait_time = randi() % 20 + 1
+	$CallTimer.wait_time = 10
 	
 	var notCallingList : Array
 	
 	for i in homes:
-		if !i.isCalling:
+		print("home name: " + i.name)
+		print("home connected? " + str(i.connected))
+		print("home calling? " + str(i.isCalling))
+		print("\n")
+		if !i.connected and !i.isCalling:
+			# if a home cannot be calling or connected, so its only good if both of these are false
 			notCallingList.append(i)
 	
 	#picks a random house to start calling

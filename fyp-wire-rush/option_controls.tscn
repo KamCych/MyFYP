@@ -11,39 +11,41 @@ grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("1_6x781")
 
-[node name="PhoneButt" type="Button" parent="."]
+[node name="PhoneText" type="Label" parent="."]
 layout_mode = 0
-offset_left = 805.0
-offset_top = 533.0
-offset_right = 869.0
-offset_bottom = 597.0
-text = "Phone"
+offset_left = -53.0
+offset_top = -104.0
+offset_right = 87.0
+offset_bottom = -49.0
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 8
+theme_override_font_sizes/font_size = 30
+text = "PHONE"
+vertical_alignment = 1
 
-[node name="NetButt" type="Button" parent="."]
+[node name="RadioText" type="Label" parent="."]
 layout_mode = 0
-offset_left = 902.0
-offset_top = 533.0
-offset_right = 966.0
-offset_bottom = 597.0
-text = "Net"
+offset_left = -54.0
+offset_top = -28.0
+offset_right = 71.0
+offset_bottom = 27.0
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 8
+theme_override_font_sizes/font_size = 30
+text = "RADIO"
+vertical_alignment = 1
 
-[node name="DisconnectButt" type="Button" parent="."]
+[node name="NetText" type="Label" parent="."]
 layout_mode = 0
-offset_left = 999.0
-offset_top = 533.0
-offset_right = 1093.0
-offset_bottom = 597.0
-text = "Disconnect"
-
-[node name="Button" type="Button" parent="."]
-layout_mode = 0
-offset_left = 900.0
-offset_top = 419.0
-offset_right = 973.0
-offset_bottom = 491.0
-text = "BUTTON"
-
-[connection signal="pressed" from="PhoneButt" to="." method="_on_phone_butt_pressed"]
-[connection signal="pressed" from="NetButt" to="." method="_on_net_butt_pressed"]
-[connection signal="pressed" from="DisconnectButt" to="." method="_on_disconnect_butt_pressed"]
-[connection signal="pressed" from="Button" to="." method="_on_button_pressed"]
+offset_left = -55.0
+offset_top = 54.0
+offset_right = 21.0
+offset_bottom = 109.0
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 8
+theme_override_font_sizes/font_size = 30
+text = "NET"
+vertical_alignment = 1

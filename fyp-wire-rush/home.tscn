@@ -1,7 +1,8 @@
-[gd_scene load_steps=7 format=3 uid="uid://8kjrvfqefuup"]
+[gd_scene load_steps=10 format=3 uid="uid://8kjrvfqefuup"]
 
 [ext_resource type="Script" uid="uid://ct161d8xv35e" path="res://home.gd" id="1_1ey7h"]
 [ext_resource type="Texture2D" uid="uid://cth4prhjkddd7" path="res://assets/house.png" id="2_1ey7h"]
+[ext_resource type="AudioStream" uid="uid://4prxaff67qa" path="res://assets/phone-ring.wav" id="3_o1ld7"]
 
 [sub_resource type="Animation" id="Animation_o1ld7"]
 length = 0.001
@@ -94,6 +95,12 @@ _data = {
 &"ring": SubResource("Animation_2ayvv")
 }
 
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_1ey7h"]
+bg_color = Color(0.6, 0.6, 0.6, 0)
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_1ey7h"]
+radius = 86.82777
+
 [node name="Home" type="Node2D" groups=["homes"]]
 scale = Vector2(0.8, 0.8)
 script = ExtResource("1_1ey7h")
@@ -107,15 +114,22 @@ libraries = {
 }
 
 [node name="Button" type="Button" parent="."]
-offset_left = -212.5
-offset_top = -208.74998
-offset_right = -47.5
-offset_bottom = -51.749985
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -82.5
+offset_top = -78.5
+offset_right = 82.5
+offset_bottom = 78.5
+grow_horizontal = 2
+grow_vertical = 2
 scale = Vector2(1, 1.1000006)
-text = "press to answer"
+theme_override_styles/normal = SubResource("StyleBoxFlat_1ey7h")
 
 [node name="PatienceTimer" type="Timer" parent="."]
-wait_time = 10.0
+wait_time = 15.0
 
 [node name="PatienceMeter" type="ProgressBar" parent="."]
 offset_left = -87.0
@@ -126,11 +140,21 @@ value = 100.0
 fill_mode = 1
 show_percentage = false
 
+[node name="Area2D" type="Area2D" parent="."]
+scale = Vector2(0.99999994, 0.99999994)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+scale = Vector2(1.0000001, 1.0000001)
+shape = SubResource("CircleShape2D_1ey7h")
+
 [node name="ProblemText" type="Label" parent="."]
 offset_left = -62.0
 offset_top = -158.0
 offset_right = 64.0
 offset_bottom = -126.0
+
+[node name="Ringing" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("3_o1ld7")
 
 [connection signal="pressed" from="Button" to="." method="_on_button_pressed"]
 [connection signal="timeout" from="PatienceTimer" to="." method="_on_patience_timer_timeout"]
