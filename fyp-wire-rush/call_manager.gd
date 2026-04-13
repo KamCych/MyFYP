@@ -3,6 +3,8 @@ extends Node2D
 var homes : Array[Node]
 var inactiveHomes : Array
 
+var call_time = 15
+
 func _ready() -> void:
 	homes = get_tree().get_nodes_in_group("homes")
 	inactiveHomes = homes
@@ -33,7 +35,7 @@ func _on_answered(homePosition) -> void:
 func _on_call_timer_timeout() -> void:
 	
 	#$CallTimer.wait_time = randi() % 20 + 1
-	$CallTimer.wait_time = 10
+	$CallTimer.wait_time = call_time
 	
 	var notCallingList : Array
 	

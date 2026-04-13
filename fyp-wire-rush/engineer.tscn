@@ -1,18 +1,35 @@
-[gd_scene load_steps=4 format=3 uid="uid://dd3u8b2q6l34"]
+[gd_scene load_steps=7 format=3 uid="uid://dd3u8b2q6l34"]
 
 [ext_resource type="Script" uid="uid://v6opp62sjrgh" path="res://engineer.gd" id="1_8skjf"]
-[ext_resource type="Texture2D" uid="uid://bm422wi6tdnwo" path="res://icon.svg" id="1_y47ya"]
+[ext_resource type="Texture2D" uid="uid://di765o275lo3l" path="res://assets/van sheet.png" id="2_8skjf"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_8skjf"]
 radius = 19.026299
 
+[sub_resource type="AtlasTexture" id="AtlasTexture_6r80v"]
+atlas = ExtResource("2_8skjf")
+region = Rect2(0, 0, 320, 320)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_42ce0"]
+atlas = ExtResource("2_8skjf")
+region = Rect2(0, 320, 320, 320)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_0k5jb"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_6r80v")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_42ce0")
+}],
+"loop": true,
+"name": &"default",
+"speed": 2.0
+}]
+
 [node name="Engineer" type="CharacterBody2D"]
 script = ExtResource("1_8skjf")
-
-[node name="Sprite2D" type="Sprite2D" parent="."]
-modulate = Color(0.86499, 0.354756, 0, 1)
-scale = Vector2(0.25, 0.25)
-texture = ExtResource("1_y47ya")
 
 [node name="Area2D" type="Area2D" parent="."]
 
@@ -20,6 +37,12 @@ texture = ExtResource("1_y47ya")
 shape = SubResource("CircleShape2D_8skjf")
 
 [node name="Timer" type="Timer" parent="."]
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+scale = Vector2(0.25, 0.25)
+sprite_frames = SubResource("SpriteFrames_0k5jb")
+autoplay = "default"
+frame_progress = 0.53754735
 
 [connection signal="area_shape_entered" from="Area2D" to="." method="_on_area_2d_area_shape_entered"]
 [connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]

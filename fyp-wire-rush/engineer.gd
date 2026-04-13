@@ -6,14 +6,21 @@ var homeTarget
 var newHQ
 var canMove = true
 
+var speed = 30
 
 func _physics_process(delta: float) -> void:
+	
+	
 	
 	if sentOut:
 		#get_node("HQ").engineerCall.connect(_on_engineer_call)
 		
-		velocity = global_position.direction_to(homeTargetPosition) * 40
+		velocity = global_position.direction_to(homeTargetPosition) * speed
 		#print(velocity)
+		if velocity.x > 0:
+			$AnimatedSprite2D.scale = Vector2(0.25, 0.25)
+		else:
+			$AnimatedSprite2D.scale = Vector2(-0.25, 0.25)
 		
 		if canMove:
 			move_and_slide()
