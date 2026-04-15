@@ -1,4 +1,4 @@
-[gd_scene load_steps=9 format=3 uid="uid://bkl8ujy5ssp7g"]
+[gd_scene load_steps=10 format=3 uid="uid://bkl8ujy5ssp7g"]
 
 [ext_resource type="PackedScene" uid="uid://dyh0sto57vr2p" path="res://call_manager.tscn" id="1_0xm2m"]
 [ext_resource type="PackedScene" uid="uid://8kjrvfqefuup" path="res://home.tscn" id="2_h2yge"]
@@ -6,6 +6,7 @@
 [ext_resource type="PackedScene" uid="uid://e3g7xt1qmm7u" path="res://hq.tscn" id="4_1bvp3"]
 [ext_resource type="PackedScene" uid="uid://dn2t0c41j1x4r" path="res://option_controls.tscn" id="5_lquwl"]
 [ext_resource type="Script" uid="uid://vefepxpxs4uj" path="res://problem_tracker.gd" id="6_7mycd"]
+[ext_resource type="PackedScene" uid="uid://1swqlo7mskvk" path="res://cursor.tscn" id="6_kek77"]
 [ext_resource type="PackedScene" uid="uid://jps3bwfeqy6s" path="res://map.tscn" id="7_272bh"]
 [ext_resource type="PackedScene" uid="uid://dh76bf2xlm840" path="res://lives.tscn" id="8_5vw27"]
 
@@ -38,20 +39,23 @@ position = Vector2(208, 150)
 scale = Vector2(0.75, 0.75)
 
 [node name="a3" parent="Homes" instance=ExtResource("2_h2yge")]
-position = Vector2(511.00003, 505)
+position = Vector2(509, 492.00003)
 scale = Vector2(0.75, 0.75)
 
 [node name="a4" parent="Homes" instance=ExtResource("2_h2yge")]
-position = Vector2(852, 505)
+position = Vector2(852, 492.00003)
 scale = Vector2(0.75, 0.75)
 
 [node name="a5" parent="Homes" instance=ExtResource("2_h2yge")]
-position = Vector2(202, 501)
+position = Vector2(202, 488)
 scale = Vector2(0.75, 0.75)
 
 [node name="a6" parent="Homes" instance=ExtResource("2_h2yge")]
 position = Vector2(889, 104)
 scale = Vector2(0.75, 0.75)
+
+[node name="Cursor" parent="." instance=ExtResource("6_kek77")]
+position = Vector2(350, 428)
 
 [node name="InputManager" type="Node" parent="."]
 script = ExtResource("3_h2yge")

@@ -5,6 +5,7 @@ var homeTargetPosition
 var homeTarget
 var newHQ
 var canMove = true
+var type
 
 var speed = 40
 
@@ -43,7 +44,7 @@ func engineerDisconnected():
 
 func _on_area_2d_area_shape_entered(area_rid: RID, area: Area2D, area_shape_index: int, local_shape_index: int) -> void:
 	if area.get_parent().name == homeTarget.name:
-		homeTarget.engineerArrived()
+		homeTarget.engineerArrived(type)
 		queue_free()
 		
 

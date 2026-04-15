@@ -40,6 +40,7 @@ func Reset():
 	needHelp = false
 	connected = false
 	$PatienceTimer.stop()
+	$PatienceMeter.visible = false
 	$ProblemText.text = ""
 
 func Calling() -> void:
@@ -49,6 +50,7 @@ func Calling() -> void:
 	
 func onCall():
 	isCalling = true
+	$PatienceMeter.visible = true
 	$PatienceTimer.start()
 	$Ringing.play()
 	
@@ -101,15 +103,17 @@ func sendHelp(knobValue):
 	
 	return true
 
-func engineerArrived():
+func engineerArrived(engineerType):
 	#plus one to score
-	Reset()
-	print("YOU HELPED A CUUSTOMER")
-	$"../../Lives".score += 1
-	$Emote.visible = true
-	$Emote.playHappyEmote()
-	$EmoteTimer.start()
-	
+	if engineerType == problem:
+		Reset()
+		print("YOU HELPED A CUUSTOMER")
+		$"../../Lives".score += 1
+		$Emote.visible = true
+		$Emote.playHappyEmote()
+		$EmoteTimer.start()
+	else:
+		playerFailed()
 	
 
 func playerFailed():
