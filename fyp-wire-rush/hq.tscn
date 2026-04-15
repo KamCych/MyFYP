@@ -8,5 +8,15 @@ scale = Vector2(0.8, 0.8)
 script = ExtResource("1_7tt6b")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
+visible = false
 modulate = Color(5.10186e-06, 0.748854, 0.302162, 1)
 texture = ExtResource("1_y5vmi")
+
+[node name="RichTextLabel" type="RichTextLabel" parent="."]
+offset_left = -41.25
+offset_top = -33.75
+offset_right = 56.249985
+offset_bottom = 43.749992
+theme_override_constants/outline_size = 10
+theme_override_font_sizes/normal_font_size = 50
+text = "HQ"

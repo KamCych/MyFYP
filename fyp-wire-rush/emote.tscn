@@ -1,0 +1,92 @@
+[gd_scene load_steps=10 format=3 uid="uid://ccrsmd1sk047g"]
+
+[ext_resource type="Texture2D" uid="uid://07o5d2x8fq8j" path="res://assets/angry icon.png" id="1_0idit"]
+[ext_resource type="Script" uid="uid://dc5r4a0wt835k" path="res://emote.gd" id="1_8isw6"]
+[ext_resource type="Texture2D" uid="uid://c3gym46loeusc" path="res://assets/happy icon.png" id="2_8isw6"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_1qxyx"]
+atlas = ExtResource("1_0idit")
+region = Rect2(0, 0, 320, 320)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_5vvuq"]
+atlas = ExtResource("1_0idit")
+region = Rect2(0, 320, 320, 320)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_xakbe"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_1qxyx")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_5vvuq")
+}],
+"loop": true,
+"name": &"angry",
+"speed": 5.0
+}]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_8ckf4"]
+atlas = ExtResource("2_8isw6")
+region = Rect2(0, 0, 320, 320)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_cudfe"]
+atlas = ExtResource("2_8isw6")
+region = Rect2(0, 320, 320, 320)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_g7i6d"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_8ckf4")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_cudfe")
+}],
+"loop": true,
+"name": &"happy",
+"speed": 5.0
+}]
+
+[node name="Emote" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_8isw6")
+
+[node name="ColorRect2" type="ColorRect" parent="."]
+layout_mode = 1
+offset_left = -33.0
+offset_top = -28.0
+offset_right = 722.0
+offset_bottom = 598.0
+scale = Vector2(1.0915155, 0.9855159)
+color = Color(0, 0, 0, 1)
+
+[node name="ColorRect" type="ColorRect" parent="."]
+layout_mode = 1
+offset_right = 755.0
+offset_bottom = 626.0
+scale = Vector2(1.0059808, 0.8800543)
+color = Color(0.9253531, 0.9253527, 0.9253529, 1)
+
+[node name="AngrySprite" type="AnimatedSprite2D" parent="."]
+visible = false
+position = Vector2(358, 247)
+scale = Vector2(1.5, 1.5)
+sprite_frames = SubResource("SpriteFrames_xakbe")
+animation = &"angry"
+autoplay = "angry"
+frame_progress = 0.72281694
+
+[node name="HappySprite" type="AnimatedSprite2D" parent="."]
+visible = false
+position = Vector2(360, 249)
+scale = Vector2(1.5, 1.5)
+sprite_frames = SubResource("SpriteFrames_g7i6d")
+animation = &"happy"
+autoplay = "happy"
+frame_progress = 0.5941532

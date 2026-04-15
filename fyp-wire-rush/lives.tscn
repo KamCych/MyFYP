@@ -1,4 +1,6 @@
-[gd_scene format=3 uid="uid://dh76bf2xlm840"]
+[gd_scene load_steps=2 format=3 uid="uid://dh76bf2xlm840"]
+
+[ext_resource type="Script" uid="uid://b7jk5eiy3e5jr" path="res://lives.gd" id="1_40ilm"]
 
 [node name="Lives" type="Control"]
 layout_mode = 3
@@ -7,8 +9,9 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
+script = ExtResource("1_40ilm")
 
-[node name="Label" type="Label" parent="."]
+[node name="LivesLabel" type="Label" parent="."]
 layout_mode = 0
 offset_left = 29.0
 offset_top = 22.0
@@ -17,4 +20,15 @@ offset_bottom = 45.0
 theme_override_colors/font_color = Color(0.017732391, 0.017732391, 0.01773239, 1)
 theme_override_constants/outline_size = 1
 theme_override_font_sizes/font_size = 20
-text = "0 Angry Customers"
+text = "Lives: 3"
+
+[node name="ScoreLabel" type="Label" parent="."]
+layout_mode = 0
+offset_left = 29.0
+offset_top = 79.0
+offset_right = 212.0
+offset_bottom = 107.0
+theme_override_colors/font_color = Color(0.017732391, 0.017732391, 0.01773239, 1)
+theme_override_constants/outline_size = 1
+theme_override_font_sizes/font_size = 20
+text = "Score: 0"

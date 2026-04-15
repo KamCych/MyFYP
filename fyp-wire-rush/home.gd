@@ -17,11 +17,14 @@ var timer_max = 20
 var dialogueBox = load("res://dialogue.tscn")
 var newDialogue
 
+var patienceValue
+
 func _ready() -> void:
 	$PatienceTimer.wait_time = timer_max
 
 func _process(delta: float) -> void:
 	$PatienceMeter.value = $PatienceTimer.time_left * (100/timer_max)
+	patienceValue = $PatienceMeter.value
 	if isCalling:
 		#Calling()
 		$AnimationPlayer.play("ring")
@@ -69,11 +72,17 @@ func pickedUp():
 	add_child(newDialogue)
 	newDialogue.global_position = Vector2.ZERO
 	newDialogue.showDialogue(problem)
+	
+	var randomSound = randi_range(0,1)
+	if randomSound == 0:
+		$Blabble.play()
+	elif randomSound == 1:
+		$Blabble2.play()
 
 func _on_patience_timer_timeout() -> void:
 	isCalling = false
 	print("failed to help customer")
-	Reset()
+	playerFailed()
 	#penalty for ignoring customer
 	
 func connectTo():
@@ -95,8 +104,22 @@ func sendHelp(knobValue):
 func engineerArrived():
 	#plus one to score
 	Reset()
-	print("YOU HEL:PED A CUUSTOMER")
+	print("YOU HELPED A CUUSTOMER")
+	$"../../Lives".score += 1
+	$Emote.visible = true
+	$Emote.playHappyEmote()
+	$EmoteTimer.start()
+	
+	
 
 func playerFailed():
 	Reset()
 	print("YOU LOST A CUSTOMER")
+	$"../../Lives".lives -= 1
+	$Emote.visible = true
+	$Emote.playAngryEmote()
+	$EmoteTimer.start()
+
+
+func _on_emote_timer_timeout() -> void:
+	$Emote.visible = false

@@ -58,10 +58,10 @@ theme_override_font_sizes/normal_font_size = 30
 text = "I'm having problems with my phone!"
 
 [node name="SpeechTimer" type="Timer" parent="."]
-wait_time = 0.030000000000000002
+wait_time = 0.03
 
 [node name="SpawnTimer" type="Timer" parent="."]
-wait_time = 0.5
+wait_time = 0.1
 autostart = true
 
 [connection signal="timeout" from="SpeechTimer" to="." method="_on_speech_timer_timeout"]

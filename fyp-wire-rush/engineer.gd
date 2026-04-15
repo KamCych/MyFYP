@@ -6,11 +6,14 @@ var homeTarget
 var newHQ
 var canMove = true
 
-var speed = 30
+var speed = 40
 
 func _physics_process(delta: float) -> void:
 	
-	
+	if homeTarget != null:
+		if homeTarget.patienceValue <= 0 :
+			engineerDisconnected()
+			homeTarget = null
 	
 	if sentOut:
 		#get_node("HQ").engineerCall.connect(_on_engineer_call)
@@ -33,6 +36,7 @@ func _on_engineer_call(target):
 	sentOut = true
 
 func engineerDisconnected():
+	$Area2D/CollisionShape2D.disabled = true
 	homeTarget.playerFailed()
 	$Timer.start()
 	canMove = false
