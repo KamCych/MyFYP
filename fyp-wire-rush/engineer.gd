@@ -7,7 +7,7 @@ var newHQ
 var canMove = true
 var type
 
-var speed = 40
+var speed = 35
 
 func _physics_process(delta: float) -> void:
 	

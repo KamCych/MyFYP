@@ -1,4 +1,4 @@
-[gd_scene load_steps=13 format=3 uid="uid://8kjrvfqefuup"]
+[gd_scene load_steps=14 format=3 uid="uid://8kjrvfqefuup"]
 
 [ext_resource type="Script" uid="uid://ct161d8xv35e" path="res://home.gd" id="1_1ey7h"]
 [ext_resource type="Texture2D" uid="uid://cth4prhjkddd7" path="res://assets/house.png" id="2_1ey7h"]
@@ -6,6 +6,7 @@
 [ext_resource type="AudioStream" uid="uid://bnamity8h070p" path="res://assets/phone-blabble1.wav" id="4_2ayvv"]
 [ext_resource type="AudioStream" uid="uid://buwdby60hro1v" path="res://assets/phone-blabble2.wav" id="5_w1mvj"]
 [ext_resource type="PackedScene" uid="uid://ccrsmd1sk047g" path="res://emote.tscn" id="6_lxycn"]
+[ext_resource type="Texture2D" uid="uid://cgdj1xvocjifj" path="res://assets/outline-cable.png" id="7_vqw7c"]
 
 [sub_resource type="Animation" id="Animation_o1ld7"]
 length = 0.001
@@ -179,6 +180,12 @@ scale = Vector2(0.17828558, 0.17828558)
 
 [node name="EmoteTimer" type="Timer" parent="."]
 wait_time = 2.0
+
+[node name="Cable" type="Sprite2D" parent="."]
+visible = false
+position = Vector2(-137.49998, 7.4999995)
+scale = Vector2(0.3, 0.3)
+texture = ExtResource("7_vqw7c")
 
 [connection signal="pressed" from="Button" to="." method="_on_button_pressed"]
 [connection signal="timeout" from="PatienceTimer" to="." method="_on_patience_timer_timeout"]

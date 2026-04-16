@@ -11,6 +11,8 @@ var lastConnectedHome
 var newEngineer
 var engineers : Array[Node]
 
+var connectedHomes = 0
+
 func _ready() -> void:
 	homes = get_tree().get_nodes_in_group("homes")
 	
@@ -20,6 +22,15 @@ func _ready() -> void:
 
 
 func _process(delta: float) -> void:
+	
+	connectedHomes = 0
+	
+	for i in homes:
+		if i.connected:
+			connectedHomes += 1
+	
+	$"../Lives".cables = connectedHomes
+	
 	if sentEngineer:
 		var newEngineer = engineer.instantiate()
 		add_child(newEngineer)
@@ -75,7 +86,7 @@ func _process(delta: float) -> void:
 		
 				
 			#send help
-	print(Input.get_joy_name(0))
+	#print(Input.get_joy_name(0))
 	if Input.get_joy_name(0) != "XInput Controller":
 		
 	
@@ -191,9 +202,11 @@ func _process(delta: float) -> void:
 						engineers.remove_at(i)
 	
 	else: #if the controller is an xbox controller
+		 
+		
 		if $"../Cursor".currentHome == "a1":
 			if Input.is_action_just_pressed("connect"):
-				if !homes[0].connected:
+				if !homes[0].connected and connectedHomes <= 1:
 					print("Put in cable")
 					homes[0].connected = true
 					#print("PRESSED BUTTON a1 ON CONTROLLER")
@@ -216,7 +229,7 @@ func _process(delta: float) -> void:
 								engineers.remove_at(i)
 		if $"../Cursor".currentHome == "a2":
 			if Input.is_action_just_pressed("connect"):
-				if !homes[1].connected:
+				if !homes[1].connected and connectedHomes <= 1:
 					print("Put in cable")
 					homes[1].connected = true
 					#print("PRESSED BUTTON a1 ON CONTROLLER")
@@ -239,7 +252,7 @@ func _process(delta: float) -> void:
 								engineers.remove_at(i)
 		if $"../Cursor".currentHome == "a3":
 			if Input.is_action_just_pressed("connect"):
-				if !homes[2].connected:
+				if !homes[2].connected and connectedHomes <= 1:
 					print("Put in cable")
 					homes[2].connected = true
 					#print("PRESSED BUTTON a1 ON CONTROLLER")
@@ -262,7 +275,7 @@ func _process(delta: float) -> void:
 								engineers.remove_at(i)
 		if $"../Cursor".currentHome == "a4":
 			if Input.is_action_just_pressed("connect"):
-				if !homes[3].connected:
+				if !homes[3].connected and connectedHomes <= 1:
 					print("Put in cable")
 					homes[3].connected = true
 					#print("PRESSED BUTTON a1 ON CONTROLLER")
@@ -285,7 +298,7 @@ func _process(delta: float) -> void:
 								engineers.remove_at(i)
 		if $"../Cursor".currentHome == "a5":
 			if Input.is_action_just_pressed("connect"):
-				if !homes[4].connected:
+				if !homes[4].connected and connectedHomes <= 1:
 					print("Put in cable")
 					homes[4].connected = true
 					#print("PRESSED BUTTON a1 ON CONTROLLER")
@@ -308,7 +321,7 @@ func _process(delta: float) -> void:
 								engineers.remove_at(i)
 		if $"../Cursor".currentHome == "a6":
 			if Input.is_action_just_pressed("connect"):
-				if !homes[5].connected:
+				if !homes[5].connected and connectedHomes <= 1:
 					print("Put in cable")
 					homes[5].connected = true
 					#print("PRESSED BUTTON a1 ON CONTROLLER")

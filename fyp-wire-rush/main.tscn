@@ -35,7 +35,7 @@ position = Vector2(476, 102)
 scale = Vector2(0.75, 0.75)
 
 [node name="a2" parent="Homes" instance=ExtResource("2_h2yge")]
-position = Vector2(208, 150)
+position = Vector2(227, 174)
 scale = Vector2(0.75, 0.75)
 
 [node name="a3" parent="Homes" instance=ExtResource("2_h2yge")]

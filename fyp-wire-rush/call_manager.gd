@@ -34,6 +34,10 @@ func _on_answered(homePosition) -> void:
 #call timer is in charge of when a customer calls the phone
 func _on_call_timer_timeout() -> void:
 	
+	if $"../Lives".score >= 300:
+		call_time = 5
+		print("FASTER")
+	
 	#$CallTimer.wait_time = randi() % 20 + 1
 	$CallTimer.wait_time = call_time
 	

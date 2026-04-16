@@ -33,6 +33,10 @@ func _process(delta: float) -> void:
 		$AnimationPlayer.stop()
 		$Button.visible = false
 		
+	if connected:
+		$Cable.visible = true
+	else:
+		$Cable.visible = false
 	
 
 func Reset():
@@ -108,7 +112,7 @@ func engineerArrived(engineerType):
 	if engineerType == problem:
 		Reset()
 		print("YOU HELPED A CUUSTOMER")
-		$"../../Lives".score += 1
+		$"../../Lives".score += 100
 		$Emote.visible = true
 		$Emote.playHappyEmote()
 		$EmoteTimer.start()
