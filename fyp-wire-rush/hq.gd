@@ -51,7 +51,15 @@ func _process(delta: float) -> void:
 					add_child(newEngineer)
 					
 					
-					
+					if knobAxis < -0.5:
+						print("sent phone eng") #originally Reset()
+						newEngineer.type = "phone"
+					elif knobAxis > 0.5:
+						print("sent net eng")
+						newEngineer.type = "net"
+					else:
+						print("sent radio eng")
+						newEngineer.type = "radio"
 					
 					
 					#newEngineer.engineerCall.connect(_on_engineer_call)
