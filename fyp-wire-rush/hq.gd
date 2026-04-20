@@ -41,7 +41,8 @@ func _process(delta: float) -> void:
 	
 	
 	if waitingForInput:
-		if Input.get_joy_name(0) != "XInput Controller":
+		if Input.get_joy_name(0) != "Xbox One For Windows":
+			print("XBOX CONRTOLLER")
 			if Input.is_action_pressed("confirm"):
 				# `walk` will be a floating-point number between `-1.0` and `1.0`.
 				var knobAxis = Input.get_axis("left_knob", "right_knob")
@@ -95,7 +96,7 @@ func _process(delta: float) -> void:
 				
 			#send help
 	#print(Input.get_joy_name(0))
-	if Input.get_joy_name(0) != "XInput Controller":
+	if Input.get_joy_name(0) != "Xbox One For Windows":
 		
 	
 		if Input.is_action_just_pressed("a1"):
