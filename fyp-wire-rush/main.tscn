@@ -13,8 +13,10 @@
 [node name="Main" type="Node2D"]
 
 [node name="Map" parent="." instance=ExtResource("7_272bh")]
+metadata/_edit_use_anchors_ = true
 
 [node name="Lives" parent="." instance=ExtResource("8_5vw27")]
+metadata/_edit_use_anchors_ = true
 
 [node name="OptionControls" parent="." instance=ExtResource("5_lquwl")]
 offset_left = 1040.0
@@ -66,5 +68,17 @@ position = Vector2(558, 303)
 [node name="ProblemTracker" type="Node" parent="."]
 script = ExtResource("6_7mycd")
 
+[node name="TimeLabel" type="Label" parent="."]
+offset_left = 11.0
+offset_top = 590.0
+offset_right = 203.0
+offset_bottom = 641.0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+
+[node name="GameOverTimer" type="Timer" parent="."]
+wait_time = 120.0
+autostart = true
+
 [connection signal="picked_choice" from="OptionControls" to="ProblemTracker" method="_on_option_controls_picked_choice"]
 [connection signal="timeout" from="CallManager/CallTimer" to="CallManager" method="_on_call_timer_timeout"]
+[connection signal="timeout" from="GameOverTimer" to="Lives" method="_on_game_over_timer_timeout"]

@@ -5,7 +5,7 @@ var currentHome
 
 func _ready() -> void:
 	
-	if (Input.get_joy_name(0) == "Xbox One For Windows"):
+	if (Input.get_joy_name(0) != "CircuitPython HID"):
 		print("xbox controller connected")
 	else:
 		print(Input.get_joy_name(0))
