@@ -5,7 +5,8 @@ var currentHome
 
 func _ready() -> void:
 	
-	if (Input.get_joy_name(0) != "CircuitPython HID"):
+	if (Input.get_joy_name(0) != "Raspberry Pi CircuitPython HID"):
+		print(Input.get_joy_name(0))
 		print("xbox controller connected")
 	else:
 		print(Input.get_joy_name(0))

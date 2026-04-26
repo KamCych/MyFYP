@@ -41,8 +41,8 @@ func _process(delta: float) -> void:
 	
 	
 	if waitingForInput:
-		if Input.get_joy_name(0) == "CircuitPython HID":
-			print("XBOX CONRTOLLER")
+		if Input.get_joy_name(0) == "Raspberry Pi CircuitPython HID":
+			
 			if Input.is_action_pressed("confirm"):
 				# `walk` will be a floating-point number between `-1.0` and `1.0`.
 				var knobAxis = Input.get_axis("left_knob", "right_knob")
@@ -96,7 +96,7 @@ func _process(delta: float) -> void:
 				
 			#send help
 	#print(Input.get_joy_name(0))
-	if Input.get_joy_name(0) == "CircuitPython HID":
+	if Input.get_joy_name(0) == "Raspberry Pi CircuitPython HID":
 		
 	
 		if Input.is_action_just_pressed("a1"):
